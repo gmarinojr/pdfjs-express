@@ -4,40 +4,54 @@ import './App.css';
 
 const App = () => {
   const viewer = useRef(null);
+  const input = document.getElementById('file_upload');
+  const saveBlob = document.getElementById('save_blob');
+  const loadBlob = document.getElementById('load_blob');
 
-  // if using a class, equivalent of componentDidMount 
+  // let documentBlob;
+  let xfdfData;
+
+  // const saveBlobToServer = (blob) => {
+  //   console.log(blob);
+  // };
+
   useEffect(() => {
     WebViewer(
       {
         path: '/webviewer/lib',
-        initialDoc: '/files/pdftron_about.pdf',
+        initialDoc: '/files/VS 6-22.pdf',
       },
-      viewer.current,
+      viewer.current
     ).then((instance) => {
-      const { docViewer, Annotations } = instance;
-      const annotManager = docViewer.getAnnotationManager();
+      const { docViewer, annotManager } = instance;
+      input.addEventListener('change', function() {
+        var file = input.files[0];
+        instance.loadDocument(file, { filename: file.name });
+      });
 
-      docViewer.on('documentLoaded', () => {
-        const rectangleAnnot = new Annotations.RectangleAnnotation();
-        rectangleAnnot.PageNumber = 1;
-        // values are in page coordinates with (0, 0) in the top left
-        rectangleAnnot.X = 100;
-        rectangleAnnot.Y = 150;
-        rectangleAnnot.Width = 200;
-        rectangleAnnot.Height = 50;
-        rectangleAnnot.Author = annotManager.getCurrentUser();
-
-        annotManager.addAnnotation(rectangleAnnot);
-        // need to draw the annotation otherwise it won't show up until the page is refreshed
-        annotManager.redrawAnnotation(rectangleAnnot);
+      docViewer.on('documentLoaded', async () => {
+        // const documentStream = await docViewer.getDocument().getFileData({});
+        // documentBlob = new Blob([documentStream], {
+        //   type: 'application/pdf',
+        // });
+        // annotManager.on('fieldChanged', (field, value) => {
+        //   console.log('Field changed: ' + field.name + ', ' + value);
+        // });
+        saveBlob.addEventListener('click', async () => {
+          xfdfData = await annotManager.exportAnnotations();
+          // saveBlobToServer(documentBlob);
+        });
+        loadBlob.addEventListener('click', async () => {
+          await annotManager.importAnnotations(xfdfData);
+        });
       });
     });
   }, []);
 
   return (
-    <div className="App">
-      <div className="header">React sample</div>
-      <div className="webviewer" ref={viewer}></div>
+    <div className='App'>
+      <div className='header'>React sample</div>
+      <div className='webviewer' ref={viewer}></div>
     </div>
   );
 };
