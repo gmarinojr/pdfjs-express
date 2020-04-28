@@ -1,0 +1,28 @@
+{
+  "paymentCertification": "FedEmployee",
+  "dateListed": "2020-04-30T14:49:00.000Z",
+  "previousTestDate": "2020-04-15T14:49:00.000Z",
+  "serialNumbers": [
+    "1234567"
+  ],
+  "tuberculosisHerd": "Bison",
+  "testMethod": "CaudalFold",
+  "testReason": "Area",
+  "wholeHerd": "N",
+  "herdSize": 20,
+  "herdNumber": "123",
+  "farmNumber": "456",
+  "unit": "B",
+  "remarks": "None",
+  "lesionCode": "Head",
+  "testCode": "I",
+  "agreeCode": "23",
+  "reactor": 3,
+  "suspect": 5,
+  "total": 8,
+  "speciesId": "8ea1e518-0147-42ed-bab9-ab90012079f3",
+  "startDate": "2020-04-28T14:49:44.604Z",
+  "endDate": "2020-04-28T14:49:44.604Z",
+  "activitySequence": 1,
+  "activityPlanId": "290efff7-9f61-46b1-ded2-08d7eb848a1b"
+}
