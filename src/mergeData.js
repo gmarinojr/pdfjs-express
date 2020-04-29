@@ -1,4 +1,4 @@
-export function saveToXml(xml) {
+export function mergeData(xml) {
   // let txt = '';
   // const path = '/xfdf/fields/field/1/name';
   // if (xml.evaluate) {

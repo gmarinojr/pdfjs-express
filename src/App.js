@@ -2,12 +2,12 @@ import React, { useRef, useEffect } from 'react';
 import WebViewer from '@pdftron/pdfjs-express';
 import './App.css';
 import cft from './mockData.json';
-import { xfdfFields } from './xfdfFields';
-import { saveToXml } from './saveToXml';
+import { vs622Fields } from './vs622Fields';
+import { mergeData } from './mergeData';
 
 const App = () => {
   const viewer = useRef(null);
-  const mergedData = saveToXml(xfdfFields);
+  const mergedData = mergeData(vs622Fields);
   // const input = document.getElementById('file_upload');
   // const saveBlob = document.getElementById('save_blob');
   // const loadBlob = document.getElementById('load_blob');
@@ -45,5 +45,5 @@ export default App;
 //   saveBlobToServer(documentBlob);
 // });
 // loadBlob.addEventListener('click', async () => {
-//   await annotManager.importAnnotations(xfdfFields);
+//   await annotManager.importAnnotations(vs622Fields);
 // });
