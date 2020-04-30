@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import WebViewer from '@pdftron/pdfjs-express';
 import './App.css';
-import cft from './mockData.json';
 import { vs622Fields } from './vs622Fields';
 import { mergeData } from './mergeData';
 import {
