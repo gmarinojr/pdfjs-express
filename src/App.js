@@ -18,7 +18,11 @@ const App = () => {
       viewer.current
     ).then((instance) => {
       const { docViewer, annotManager } = instance;
+      var Feature = instance.Feature;
+      instance.enableFeatures([Feature.Download]);
+      // instance.enableFeatures([Feature.FilePicker]);
       docViewer.on('annotationsLoaded', async () => {
+        // console.log(Feature.Download, 'heeey')
         annotManager.importAnnotations(mergedData);
       });
       saveBlob.addEventListener('click', async () => {
