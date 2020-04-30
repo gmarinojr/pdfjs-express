@@ -1,3 +1,11 @@
+export const certificationPayment = ({ paymentCertification}) => {
+  if(paymentCertification === 'FedEmployee') {
+    return 'id_5';
+  } else {
+    return 'id_23'
+  }
+}
+
 export const reasonForTest = ({ testReason }) => {
   if (testReason === 'Area') {
     return 'id_1';
