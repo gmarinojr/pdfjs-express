@@ -44,10 +44,9 @@ const App = () => {
       const { docViewer, annotManager, Annotations } = instance;
       const xmlDom = showXml(vs622Fields);
       const xmlJson = xml2json(xmlDom, "");
-      const mappedMockData = jsonMapper(xmlJson, cft);
+      // const mappedMockData = jsonMapper(xmlJson, cft);
       docViewer.on('annotationsLoaded', async () => {
-        const updatedXml = json2xml(mappedMockData, "");
-        await annotManager.importAnnotations(updatedXml);
+        await annotManager.importAnnotations(vs622Fields);
         // annotManager.importAnnotations(mergedData);
       });
     });
