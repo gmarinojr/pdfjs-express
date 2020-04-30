@@ -43,3 +43,15 @@ export const kindOfHerd = ({ tuberculosisHerd }) => {
     return 'id_19';
   }
 };
+
+export const methodOfTest = ({ testMethod }) => {
+  if (testMethod === 'CaudalFold') {
+    return 'id_4';
+  } else if (testMethod === 'Cervical') {
+    return 'id_20';
+  } else if (testMethod === 'SingleCervical') {
+    return 'id_21';
+  } else if (testMethod === 'Other') {
+    return 'id_22';
+  }
+};
