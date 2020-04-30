@@ -10,7 +10,6 @@ const App = () => {
   // const input = document.getElementById('file_upload');
   // const saveBlob = document.getElementById('save_blob');
   // const loadBlob = document.getElementById('load_blob');
-  // let documentBlob;
   // let xfdfData;
   // const saveBlobToServer = (blob) => {
   //   console.log(blob);
