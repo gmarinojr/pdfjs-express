@@ -22,6 +22,14 @@ export const reasonForTest = ({ testReason }) => {
   }
 };
 
+export const completeHerd = ({ wholeHerd }) => {
+  if (wholeHerd === 'Y') {
+    return 'id_2';
+  } else if (wholeHerd === 'N') {
+    return 'id_15';
+  }
+};
+
 export const kindOfHerd = ({ tuberculosisHerd }) => {
   if (tuberculosisHerd === 'Deer') {
     return 'id_3';
