@@ -20,6 +20,7 @@ const App = () => {
       const { docViewer, annotManager } = instance;
       var Feature = instance.Feature;
       instance.enableFeatures([Feature.Download]);
+      // console.log(instance.enableElement('downloadButton'), 'chbhcbfhb')
       // instance.enableFeatures([Feature.FilePicker]);
       docViewer.on('annotationsLoaded', async () => {
         // console.log(Feature.Download, 'heeey')
